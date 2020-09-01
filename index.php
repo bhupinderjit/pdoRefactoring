@@ -1,11 +1,10 @@
 <?php
-require 'Task.php';
-$query=require 'bootstrap.php';
+
+require 'core/bootstrap.php';
 
 
+require router::load('routes.php')
+    ->direct(Request::uri());
 
-$tasks=$query->selectAll('todos');
-
-require 'index.view.php'; 
 
 ?>
